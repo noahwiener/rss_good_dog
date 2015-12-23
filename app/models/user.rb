@@ -11,6 +11,8 @@
 #
 
 class User < ActiveRecord::Base
+
+  attr_reader :password
   after_initialize :ensure_session_token
 
   validates :password_digest, presence: true
