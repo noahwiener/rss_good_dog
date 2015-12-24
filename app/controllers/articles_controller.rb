@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to articles_url
+      redirect_to user_url(current_user)
     else
       flash.now[:errors] = @article.errors.full_messages
       redirect_to articles_url

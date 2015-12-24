@@ -7,11 +7,13 @@ function func1(id) {
 </script> -->
 
 <% @articles.each do |article| %>
-<!--  add logic here to see if current user's articles inlcudes this one-->
   <h2><%=  article.title %></h2>
   <%= link_to("Read the article online", article.link) %>
   <% if current_user %>
-    <%= link_to "star", {controller: "articles",
+    <% if current_user.articles.exists?(title: article.title) %>
+      <%= "this is already liked" %>
+    <% else %>
+      <%= link_to "star", {controller: "articles",
                          action: "create",
                          article: {
                            user_id: current_user.id,
@@ -19,6 +21,7 @@ function func1(id) {
                            url: article.link
                          }},
                          method: "post" %>
+    <% end %>
   <% else %>
     Not signed in
   <% end %>
