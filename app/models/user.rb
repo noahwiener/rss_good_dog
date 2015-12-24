@@ -14,9 +14,7 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  has_many :favorites
-
-  has_many :articles, through: :favorites
+  has_many :articles
 
   after_initialize :ensure_session_token
 

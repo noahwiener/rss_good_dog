@@ -1,15 +1,29 @@
 <h1>Here are today's articles</h1>
 
-<script language="javascript" type="text/javascript">
+<!-- <script language="javascript" type="text/javascript">
 function func1(id) {
     alert(id);
 }
-</script>
+</script> -->
 
 <% @articles.each do |article| %>
 <!--  add logic here to see if current user's articles inlcudes this one-->
   <h2><%=  article.title %></h2>
   <%= link_to("Read the article online", article.link) %>
-  <i class="fa fa-star-o" onclick="func1('<%= article.title %>')"></i>
+  <% if current_user %>
+    <%= link_to "star", {controller: "articles",
+                         action: "create",
+                         article: {
+                           user_id: current_user.id,
+                           title: article.title,
+                           url: article.link
+                         }},
+                         method: "post" %>
+  <% else %>
+    Not signed in
+  <% end %>
   <br>
 <% end %>
+
+
+<!-- <i class="fa fa-star-o"></i> -->
