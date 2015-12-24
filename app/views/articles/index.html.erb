@@ -9,11 +9,13 @@ function func1(id) {
 <% @articles.each do |article| %>
   <h2><%=  article.title %></h2>
   <%= link_to("Read the article online", article.link) %>
-  <% if current_user %>
-    <% if current_user.articles.exists?(title: article.title) %>
-      <%= "this is already liked" %>
-    <% else %>
-      <%= link_to "star", {controller: "articles",
+
+  <% if !current_user %>
+    Not signed in
+  <% elsif current_user.articles.exists?(url: article.link) %>
+    this is already liked
+  <% else %>
+    <%= link_to "star", {controller: "articles",
                          action: "create",
                          article: {
                            user_id: current_user.id,
@@ -21,10 +23,8 @@ function func1(id) {
                            url: article.link
                          }},
                          method: "post" %>
-    <% end %>
-  <% else %>
-    Not signed in
-  <% end %>
+   <% end %>
+
   <br>
 <% end %>
 
