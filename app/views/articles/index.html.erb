@@ -1,6 +1,15 @@
 <h1>Here are today's articles</h1>
 
+<script language="javascript" type="text/javascript">
+function func1(id) {
+    alert(id);
+}
+</script>
+
 <% @articles.each do |article| %>
-  <%=  link_to("Title: #{article.title}", article.url) %>
+<!--  add logic here to see if current user's articles inlcudes this one-->
+  <h2><%=  article.title %></h2>
+  <%= link_to("Read the article online", article.link) %>
+  <i class="fa fa-star-o" onclick="func1('<%= article.title %>')"></i>
   <br>
 <% end %>
