@@ -1,28 +1,30 @@
 <h1>Here are today's articles</h1>
 
-<!-- <script language="javascript" type="text/javascript">
-function func1(id) {
-    alert(id);
-}
-</script> -->
-
 <% @articles.each do |article| %>
   <h2><%=  article.title %></h2>
   <%= link_to("Read the article online", article.link) %>
 
   <% if !current_user %>
     Not signed in
+
   <% elsif current_user.articles.exists?(url: article.link) %>
-    <i class="fa fa-star"></i> (Favorited. Click the star to un-favorite this article.)
+    <% saved_article = Article.find_by(url: article.link) %>
+    <%= link_to '<i class="fa fa-star"></i>'.html_safe,
+                        article_path(saved_article),
+                        method: "delete" %>
+                        (Favorited. Click the star to un-favorite this article.)
+
   <% else %>
-    <%= link_to '<i class="fa fa-star-o"></i>'.html_safe, {controller: "articles",
+    <%= link_to '<i class="fa fa-star-o"></i>'.html_safe,
+                        {controller: "articles",
                          action: "create",
                          article: {
                            user_id: current_user.id,
                            title: article.title,
                            url: article.link
                          }},
-                         method: "post" %> (Click the star to add article to your favorites)
+                         method: "post" %>
+                         (Click the star to add article to your favorites)
    <% end %>
 
   <br>

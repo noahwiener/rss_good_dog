@@ -14,11 +14,17 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to user_url(current_user)
+      redirect_to articles_url
     else
       flash.now[:errors] = @article.errors.full_messages
       redirect_to articles_url
     end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_url
   end
 
   private
