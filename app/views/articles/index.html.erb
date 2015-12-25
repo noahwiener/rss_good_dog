@@ -13,20 +13,17 @@ function func1(id) {
   <% if !current_user %>
     Not signed in
   <% elsif current_user.articles.exists?(url: article.link) %>
-    this is already liked
+    <i class="fa fa-star"></i> (Favorited. Click the star to un-favorite this article.)
   <% else %>
-    <%= link_to "star", {controller: "articles",
+    <%= link_to '<i class="fa fa-star-o"></i>'.html_safe, {controller: "articles",
                          action: "create",
                          article: {
                            user_id: current_user.id,
                            title: article.title,
                            url: article.link
                          }},
-                         method: "post" %>
+                         method: "post" %> (Click the star to add article to your favorites)
    <% end %>
 
   <br>
 <% end %>
-
-
-<!-- <i class="fa fa-star-o"></i> -->
