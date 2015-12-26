@@ -18,9 +18,9 @@
  @import "bootstrap";
 
 
- .navbar-right li a {
-   display: inline;
+ .navbar-right li a, span {
+   display: inline-block;
+   position: relative;
    font-size: 20px;
    letter-spacing: 2px;
-   line-height: 60px;
  }

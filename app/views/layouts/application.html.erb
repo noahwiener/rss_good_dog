@@ -16,8 +16,9 @@
     <ul class="nav navbar-nav navbar-right">
       <li>
         <% if current_user %>
-          <%= current_user.user_name %>
-          <%= button_to "Sign Out", session_url, :method => :delete %>
+          <span>Hi, <%= current_user.user_name %></span>
+          <%= link_to "Favorite Articles", user_path(current_user) %>
+          <%= link_to "Sign Out", session_url, :method => :delete %>
         <% else %>
           <%= link_to "Sign In", new_session_url %> <%= link_to "Sign Up", new_user_url %>
         <% end %>
