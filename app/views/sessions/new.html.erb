@@ -7,11 +7,25 @@
     Username
     <input type="text" name="user[user_name]" value="">
   </label>
+  <br>
 
   <label>
     Password
     <input type="password" name="user[password]" value="">
   </label>
+  <br><br>
 
   <input type="submit" value="Sign In">
 </form>
+<br>
+  <em>Don't have an account?</em>
+
+  <div class="container alt-login">
+    <div class="rumo">
+      <img src="/dog.jpg">
+    </div>
+    <div class="alt-text">
+      <em><%= link_to "Click here to create your username", new_user_url %></em> or <br>
+      Click on Noah's own Good Dog, Rumo, to log in as a guest.
+    </div>
+  </div>

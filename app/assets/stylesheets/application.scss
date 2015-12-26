@@ -17,10 +17,27 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.error-messages {
+  padding: 15px;
+}
+
+.body-content {
+  text-align: center;
+}
 
  .navbar-right li a, span {
    display: inline-block;
    position: relative;
    font-size: 20px;
    letter-spacing: 2px;
+ }
+
+ .rumo {
+   display: block;
+   height: 60px;
+   width: 60px;
+ }
+
+ .rumo img {
+   background-size: cover;
  }

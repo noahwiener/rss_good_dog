@@ -1,0 +1,5 @@
+<% if flash[:errors] %>
+  <div class="error-messages">
+    <%= flash[:errors].join("<br>").html_safe %>
+  </div>
+<% end %>
