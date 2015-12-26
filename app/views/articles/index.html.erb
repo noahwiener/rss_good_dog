@@ -2,20 +2,21 @@
 
 <% @articles.each do |article| %>
   <h2><%=  article.title %></h2>
-  <%= link_to("Read the article online", article.link) %>
+  <%= link_to("Read the article online", article.link) %>,
+  <em>Published on <%= article.date %></em>.
 
   <% if !current_user %>
-    Not signed in
+    <%= link_to "Sign in to add this article to favorites", new_session_path %>
 
   <% elsif current_user.articles.exists?(url: article.link) %>
     <% saved_article = Article.find_by(url: article.link) %>
-    <%= link_to '<i class="fa fa-star"></i>'.html_safe,
+    <%= link_to '<span class="glyphicon glyphicon-star"></i>'.html_safe,
                         article_path(saved_article),
                         method: "delete" %>
                         (Favorited. Click the star to un-favorite this article.)
 
   <% else %>
-    <%= link_to '<i class="fa fa-star-o"></i>'.html_safe,
+    <%= link_to '<span class="glyphicon glyphicon-star-empty"></i>'.html_safe,
                         {controller: "articles",
                          action: "create",
                          article: {

@@ -12,6 +12,15 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
-
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+ .navbar-right li a {
+   display: inline;
+   font-size: 20px;
+   letter-spacing: 2px;
+   line-height: 60px;
+ }
