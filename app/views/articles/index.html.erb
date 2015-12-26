@@ -1,32 +1,11 @@
-<h1>Here are today's articles</h1>
+<h1>New York Times RSS Feed</h1>
 
 <% @articles.each do |article| %>
-  <h2><%=  article.title %></h2>
+  <h3><%=  article.title %></h3>
   <%= link_to("Read the article online", article.link) %>,
   <em>Published on <%= article.date %></em>.
-
-  <% if !current_user %>
-    <%= link_to "Sign in to add this article to favorites", new_session_path %>
-
-  <% elsif current_user.articles.exists?(url: article.link) %>
-    <% saved_article = Article.find_by(url: article.link) %>
-    <%= link_to '<span class="glyphicon glyphicon-star"></i>'.html_safe,
-                        article_path(saved_article),
-                        method: "delete" %>
-                        (Favorited. Click the star to un-favorite this article.)
-
-  <% else %>
-    <%= link_to '<span class="glyphicon glyphicon-star-empty"></i>'.html_safe,
-                        {controller: "articles",
-                         action: "create",
-                         article: {
-                           user_id: current_user.id,
-                           title: article.title,
-                           url: article.link
-                         }},
-                         method: "post" %>
-                         (Click the star to add article to your favorites)
-   <% end %>
+  <br>
+  <%= render 'articles/favorites', article: article %>
 
   <br>
 <% end %>

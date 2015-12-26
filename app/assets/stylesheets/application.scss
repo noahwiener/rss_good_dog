@@ -17,12 +17,12 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-.error-messages {
-  padding: 15px;
+.login-content {
+  text-align: center;
 }
 
-.body-content {
-  text-align: center;
+.error-messages {
+  padding: 15px;
 }
 
  .navbar-right li a, span {
@@ -32,12 +32,14 @@
    letter-spacing: 2px;
  }
 
- .rumo {
-   display: block;
-   height: 60px;
-   width: 60px;
+ .rumo img {
+   height: 80px;
+   width: 80px;
+   border-radius: 50%;
+   float: right;
  }
 
- .rumo img {
-   background-size: cover;
+ .alt-login-text {
+   text-align: left;
+   max-width: 200px;
  }

@@ -1,16 +1,37 @@
-<h2>Sign Up</h2>
+<div class="login-content">
 
-<form action="<%= users_url %>" method="post">
-  <%= auth_token %>
-  <label>
-    Username
-    <input type="text" name="user[user_name]" value="">
-  </label>
+  <h2>Sign Up</h2>
+
+  <form action="<%= users_url %>" method="post">
+    <%= auth_token %>
+    <label>
+      Username
+      <input type="text" name="user[user_name]" value="">
+    </label>
+    <br>
+    <label>
+      Password
+      <input type="password" name="user[password]" value="">
+    </label>
+    <br><br>
+    <input type="submit" value="Sign Up">
+  </form>
+
   <br>
-  <label>
-    Password
-    <input type="password" name="user[password]" value="">
-  </label>
-  <br>
-  <input type="submit" value="Sign Up">
-</form>
+    <em>Already have an account?</em>
+    <br>
+    <em><%= link_to "Click here to log in", new_session_url %></em>
+    <br><br>
+    <div class="row">
+      <div class="rumo col-xs-2 col-xs-offset-4">
+        <%= link_to '<img src="/dog.jpg">'.html_safe,
+        {controller: "sessions", action: "create",
+          user: {user_name: "Rumo", password: "rumopassword"}},
+          method: "post"
+         %>
+      </div>
+      <div class="alt-login-text col-xs-3">
+        Or click on Noah's own Good Dog, Rumo, to log in as a guest.
+      </div>
+    </div>
+</div>
