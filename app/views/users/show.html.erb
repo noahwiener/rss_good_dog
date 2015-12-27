@@ -1,5 +1,18 @@
-<h1>this will be the show page for the user <%= @user.user_name %></h1>
+<h3 class="section-headline"><%= @user.user_name %>'s Favorite Articles</h3>
+<%= link_to("<< Back to the New York Times feed", articles_path) %>
 
-<% @user.articles.each do |article| %>
-  <%= article.title %>
-<% end %>
+<div class="articles-list">
+  <% if @user.articles.empty? %>
+    Looks like you haven't saved any articles yet. Be a Good Dog and check out the
+    <%= link_to("RSS feed here!", articles_path) %>
+  <% else %>
+    <% @user.articles.each do |article| %>
+      <h3><%=  article.title %></h3>
+      <%= link_to("Read the article on nytimes.com", article.url) %>
+      <br>
+      <%= link_to 'Remove from favorites',
+                          article_path(article),
+                          method: "delete" %>
+                          <% end %>
+  <% end %>
+</div>

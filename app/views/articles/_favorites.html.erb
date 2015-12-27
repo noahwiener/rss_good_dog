@@ -1,12 +1,17 @@
 <% if !current_user %>
-  <%= link_to "Sign in to add this article to favorites", new_session_path %>
+  <em>
+    <%= link_to '<i class="glyphicon glyphicon-star-empty"></i>
+                  Sign in to add this article to your favorites.'.html_safe,
+                  new_session_path %>
+  </em>
 
 <% elsif current_user.articles.exists?(url: article.link) %>
   <% saved_article = Article.find_by(url: article.link) %>
   <%= link_to '<span class="glyphicon glyphicon-star"></i>'.html_safe,
                       article_path(saved_article),
                       method: "delete" %>
-                      (Favorited. Click the star to un-favorite this article.)
+                      <em>(This articles is saved as one of your favorites.
+                          Click the star to remove this article.)</em>
 
 <% else %>
   <%= link_to '<span class="glyphicon glyphicon-star-empty"></i>'.html_safe,
@@ -18,5 +23,5 @@
                          url: article.link
                        }},
                        method: "post" %>
-                       (Click the star to add article to your favorites)
+                       <em>(Click the star to add article to your favorites)</em>
  <% end %>

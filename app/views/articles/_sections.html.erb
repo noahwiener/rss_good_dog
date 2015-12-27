@@ -1,0 +1,40 @@
+<h3>Beyond the <%= @section %>: Other Sections of the New York Times </h3>
+<div class="additional-sections">
+  <ul>
+    <li><%= link_to "NYTimes.com Home Page (International Edition)",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/InternationalHome.xml',
+    section: "NYTimes.com Home Page (International Edition)") %></li>
+
+    <li><%= link_to "World News",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/World.xml',
+    section: "World News") %></li>
+
+    <li><%= link_to "US News",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/US.xml',
+    section: "US News") %></li>
+
+    <li><%= link_to "NY/Region News",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml',
+    section: "NY/Region News") %></li>
+
+    <li><%= link_to "Business News",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
+    section: "Business News") %></li>
+
+    <li><%= link_to "Technology News",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml',
+    section: "Technology News") %></li>
+
+    <li><%= link_to "Sports News",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
+    section: "Sports News") %></li>
+
+    <li><%= link_to "Science News",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/Science.xml',
+    section: "Science News") %></li>
+
+    <li><%= link_to "Health News",
+    articles_path(url: 'http://rss.nytimes.com/services/xml/rss/nyt/Health.xml',
+    section: "Health News") %></li>
+  </ul>
+</div>

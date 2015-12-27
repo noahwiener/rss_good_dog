@@ -46,6 +46,15 @@
    text-align: center;
  }
 
+ .scroll-msg {
+   text-align: center;
+ }
+
+ .articles-list{
+   padding-bottom: 20px;
+   border-bottom: 1px solid lightgrey;
+ }
+
  .rumo img {
    height: 80px;
    width: 80px;
@@ -57,3 +66,27 @@
    text-align: left;
    max-width: 200px;
  }
+
+ .additional-sections ul li {
+   list-style-type: none;
+ }
+
+ .glyphicon {
+   color: yellow;
+   font-size: 2em;
+ }
+
+ .footer {
+   text-align: center;
+   padding: 20px;
+ }
+
+ .footer ul {
+   padding: 0;
+ }
+
+ .footer ul li {
+   list-style-type: none;
+   display: inline;
+   padding: 20px;
+}
