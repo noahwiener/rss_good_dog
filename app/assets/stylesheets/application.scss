@@ -17,7 +17,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
 .login-content {
+  display: block;
   text-align: center;
 }
 
@@ -25,11 +27,23 @@
   padding: 15px;
 }
 
+.frame {
+  background-color: #eaeaea;
+}
+
+.inner {
+  background-color: white;
+}
+
  .navbar-right li a, span {
    display: inline-block;
    position: relative;
    font-size: 20px;
    letter-spacing: 2px;
+ }
+
+ .section-headline {
+   text-align: center;
  }
 
  .rumo img {
