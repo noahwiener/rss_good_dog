@@ -1,8 +1,11 @@
   <h3 class="section-headline"><%= @section %></h3>
 
   <p class="scroll-msg">
-    <em>Want to see more than just <%= @section %>?
-      Scroll down for feeds from other sections of </em>The Times
+    <% if current_user %>
+      <em>Hi <%= current_user.user_name %></em>!
+    <% end %>
+    <em>Want to see more than just <%= @section %>? <br>
+      Scroll down for feeds from other sections of </em>The Times.
   </p>
 
   <% if current_user %>
