@@ -8,9 +8,6 @@ The app also allows users to create profiles and passwords with BCrypt authentic
 
 The app's build focuses on slim databasing and intuitive navigation. Each *Times* section pulls from the *Times* API in real time, but articles are not saved to the database unless they are 'favorited' by a user. When users click stars to 'favorite' or 'unfavorite' articles, they are redirected to continue browsing the same newspaper section or the favorite articles list that they clicked from.
 
-I welcome any comments or suggestions for improvement.  Happy New Years!
--Noah
-
 ### Tech
 
 * Ruby on Rails
@@ -30,3 +27,8 @@ A screenshot of a user's favorite articles list.
 A screenshot of the sign in page.  Users can click on Rumo's picture to log in as guests.
 
 <img src="/public/sign_in.png" width="600">
+
+
+I welcome any comments or suggestions for improvement.  
+Happy New Years!
+-Noah
