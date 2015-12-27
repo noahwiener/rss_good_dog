@@ -19,6 +19,14 @@ I welcome any comments or suggestions for improvement.  Happy New Years!
 
 ### Gallery
 
+A screenshot of the feed from the technology section of the *Times*. 'Favorited' articles are marked by a filled-in star, while 'not-yet-favorited' articles are marked by empty stars.
+
 <img src="/public/first_screen.png" width="600">
+
+A screenshot of a user's favorite articles list.
+
 <img src="/public/profile.png" width="600">
+
+A screenshot of the sign in page.  Users can click on Rumo's picture to log in as guests.
+
 <img src="/public/sign_in.png" width="600">
