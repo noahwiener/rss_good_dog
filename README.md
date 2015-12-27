@@ -19,6 +19,6 @@ I welcome any comments or suggestions for improvement.  Happy New Years!
 
 ### Gallery
 
-<img src="/first_screen.png" width="600">
-<img src="/profile.png" width="600">
-<img src="/sign_in.png" width="600">
+<img src="/public/first_screen.png" width="600">
+<img src="/public/profile.png" width="600">
+<img src="/public/sign_in.png" width="600">
