@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   def index
     url = params["url"] ? params["url"] : 'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml'
     @section = params["section"] ? params["section"] : "NYTimes.com Home Page (U.S.)"
+
     require 'rss'
     require 'uri'
     open(url) do |rss|
