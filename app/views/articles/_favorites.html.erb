@@ -8,7 +8,9 @@
 <% elsif current_user.articles.exists?(url: article.link) %>
   <% saved_article = Article.find_by(url: article.link) %>
   <%= link_to '<span class="glyphicon glyphicon-star"></i>'.html_safe,
-                      article_path(saved_article),
+                      article_path(saved_article,
+                      url: params["url"],
+                      section: params["section"]),
                       method: "delete" %>
                       <em>(This articles is saved as one of your favorites.
                           Click the star to remove this article.)</em>
@@ -21,7 +23,10 @@
                          user_id: current_user.id,
                          title: article.title,
                          url: article.link
-                       }},
+                       },
+                       url: params["url"],
+                       section: params["section"]
+                       },
                        method: "post" %>
                        <em>(Click the star to add article to your favorites)</em>
  <% end %>

@@ -72,13 +72,17 @@
  }
 
  .glyphicon {
-   color: yellow;
+   color: rgb(247, 176, 2);
    font-size: 2em;
  }
 
  .footer {
    text-align: center;
    padding: 20px;
+ }
+
+ .footer span {
+   padding-bottom: 10px;
  }
 
  .footer ul {
@@ -88,5 +92,5 @@
  .footer ul li {
    list-style-type: none;
    display: inline;
-   padding: 20px;
+   padding: 0px 20px;
 }

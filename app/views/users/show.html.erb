@@ -11,7 +11,8 @@
       <%= link_to("Read the article on nytimes.com", article.url) %>
       <br>
       <%= link_to 'Remove from favorites',
-                          article_path(article),
+                          article_path(article,
+                          profile: true),
                           method: "delete" %>
                           <% end %>
   <% end %>
